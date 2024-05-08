@@ -13,7 +13,7 @@ os.makedirs(dir_to_save, exist_ok=True)
 
 # Loop over each company
 for company in companies:
-    dl = Downloader("University of Massachusetts Amherst", 'syadla@umass.edu', dir_to_save)
+    dl = Downloader("Organization", 'name@email.com', dir_to_save)
     for year in range(1995, 2024):
     # Loop over each year from 1995 through 2023
         # Download the 10-K filings
