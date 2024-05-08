@@ -15,7 +15,7 @@ from llama_index.core.query_engine import SubQuestionQueryEngine
 api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = api_key
 
-client = oai(organization='org-uxpn6DJEsNO0xRftXfOTbnpT')
+client = oai(organization='org_key')
 
 llm = oai(temperature=0, model_name="gpt-3.5-turbo-instruct", max_tokens=1)
 service_context = ServiceContext.from_defaults(llm=llm)
