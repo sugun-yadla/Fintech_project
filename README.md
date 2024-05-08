@@ -1,0 +1,7 @@
+Was able to create the sec document downloader with relative ease. Struggled a bit to use the right kind of import for certain methods(Mainly SeriveContext, please use the settings module instead)
+SimpleDirectoryReader was straightforward, documentation really helped. Was able to parse through the filings in around 15-20 minutes. Main issue was with openAis lack of free/student friendly programs to use their api.
+Even after buying 5 dollars worth of credits, it now gives an error saying that api key used was incorrect, this error only started appearing after the purchase and did not appear anytime before.
+VectorStoreIndex would have allowed for in memory indexing, which could then be used with the QueryEngine model to query the underlying index and then could finally use the .aquery function to start writing prompts and 
+receive responses. Idea was to create function that would allow for inputting prompts for both company tickers at once and give a prompt comparing both company tickers financials. Would have hardcoded the prompt with
+3 variables, 2 of which were to be the name of the company tickers and third one was to be the year. The prompt would look something like "Provides information about {ticker} financials for {year}". The final application
+would have 3 input textboxes, 2 for the companies tickers and one dropdown style/fill-in style box for the year. Visualization would have been done using matplotlib, based on the response that was printed.
