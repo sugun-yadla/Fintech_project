@@ -13,10 +13,8 @@ from llama_index.core.tools import QueryEngineTool, ToolMetadata
 from llama_index.core.query_engine import SubQuestionQueryEngine
 from sec_downloader import a,b
 
-api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = api_key
-
-client = oai(organization='org_key')
+openai.api_key =""
+client = OpenAI(api_key=openai.api_key, organization='org-uxpn6DJEsNO0xRftXfOTbnpT')
 
 llm = oai(temperature=0, model_name="gpt-3.5-turbo-instruct", max_tokens=1, api_key=openai.api_key)
 Settings.llm = oai(model="text-embedding-3-small", temperature=0)
