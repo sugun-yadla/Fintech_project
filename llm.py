@@ -13,17 +13,15 @@ from llama_index.core.tools import QueryEngineTool, ToolMetadata
 from llama_index.core.query_engine import SubQuestionQueryEngine
 from sec_downloader import a,b
 
-openai.api_key =""
-client = OpenAI(api_key=openai.api_key, organization='org-uxpn6DJEsNO0xRftXfOTbnpT')
+OpenAI.api_key =os.getenv("OPENAI_API_KEY")
+oai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), organization='org_key')
 
-llm = oai(temperature=0, model_name="gpt-3.5-turbo-instruct", max_tokens=1, api_key=openai.api_key)
-Settings.llm = oai(model="text-embedding-3-small", temperature=0)
+Settings.llm = oai(model="gpt-3.5-turbo", temperature=0.1, max_tokens=1, api_key=os.getenv('OPENAI_API_KEY'))
 Settings.embed_model = OpenAIEmbedding(
-    model="text-embedding-3-small", embed_batch_size=50
+    model="text-embedding-3-small", embed_batch_size=100, api_key= os.getenv('OPENAI_API_KEY')
 )
-Settings.node_parser = SentenceSplitter(chunk_size=256, chunk_overlap=10)
-
-
+Settings.node_parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)
 
 
 a_index = VectorStoreIndex.from_documents(a, show_progress=True, insert_batch_size=512)
